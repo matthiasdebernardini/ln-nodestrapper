@@ -5,7 +5,7 @@ export CLN_VERSION="v0.9.2"
 export LIGHTNING_DIR="/home/$USER/.lightning"
 export FULL_BTC_DATA_DIR="/home/$USER/.bitcoin"
 export CLN_HTTP_PLUGIN="Y"
-USER=$(satoshi)
+USER=satoshi
 
 HTTP_PASS=$(xxd -l 16 -p /dev/urandom)
 
@@ -419,7 +419,7 @@ mkdir -m 760 "$LIGHTNING_DIR"
 chown $USER -R "$LIGHTNING_DIR"
 cat >> "$LIGHTNING_DIR"/config << EOF
 alias=$USER
-network=testnet
+network=signet
 log-level=debug:plugin
 log-prefix=$USER
 
